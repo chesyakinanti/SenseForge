@@ -1,0 +1,94 @@
+{
+  "dataset": "data.csv",
+  "cleaned_dataset": "data_cleaned.csv",
+  "model": "senseforge_muti_random_forest.joblib",
+  "scikit_learn_version": "1.9.1",
+  "feature_columns": [
+    "vibration_mm_s",
+    "acoustic_level_db",
+    "pressure_kpa",
+    "humidity_pct",
+    "motor_rpm"
+  ],
+  "feature_selection": "Top five sensor features by absolute train-only correlation with is_anomaly",
+  "target_column": "is_anomaly",
+  "rows_original": 50000,
+  "rows_after_cleaning": 50000,
+  "duplicates_removed": 0,
+  "missing_values_before_imputation": {
+    "vibration_mm_s": 1019,
+    "acoustic_level_db": 989,
+    "pressure_kpa": 643,
+    "humidity_pct": 830,
+    "motor_rpm": 1268
+  },
+  "imputation": "Median, fitted using training rows only",
+  "outliers": "Preserved as potential anomaly signals; not clipped or removed",
+  "split_strategy": "Chronological holdout by timestamp",
+  "split_fractions": {
+    "train": 0.7000000000000001,
+    "validation": 0.1,
+    "test": 0.2
+  },
+  "validation_start_timestamp": "2024-01-05T20:40:00",
+  "test_start_timestamp": "2024-01-06T13:20:00",
+  "train_rows": 35000,
+  "validation_rows": 5000,
+  "test_rows": 10000,
+  "train_class_counts": {
+    "0": 33491,
+    "1": 1509
+  },
+  "test_class_counts": {
+    "0": 9393,
+    "1": 607
+  },
+  "decision_threshold": 0.6321261600189734,
+  "validation_f1_at_threshold": 0.7796610169486753,
+  "metrics": {
+    "accuracy": 0.9495,
+    "precision_anomaly": 0.8269230769230769,
+    "recall_anomaly": 0.21252059308072488,
+    "f1_anomaly": 0.3381389252948886,
+    "roc_auc": 0.6800003192113865,
+    "average_precision": 0.3559476257095681,
+    "specificity": 0.9971255190035132,
+    "confusion_matrix_labels_0_1": [
+      [
+        9366,
+        27
+      ],
+      [
+        478,
+        129
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.9514425030475416,
+        "recall": 0.9971255190035132,
+        "f1-score": 0.9737485054842231,
+        "support": 9393.0
+      },
+      "1": {
+        "precision": 0.8269230769230769,
+        "recall": 0.21252059308072488,
+        "f1-score": 0.3381389252948886,
+        "support": 607.0
+      },
+      "accuracy": 0.9495,
+      "macro avg": {
+        "precision": 0.8891827899853093,
+        "recall": 0.6048230560421191,
+        "f1-score": 0.6559437153895559,
+        "support": 10000.0
+      },
+      "weighted avg": {
+        "precision": 0.9438841738817868,
+        "recall": 0.9495,
+        "f1-score": 0.9351670039667304,
+        "support": 10000.0
+      }
+    }
+  }
+}

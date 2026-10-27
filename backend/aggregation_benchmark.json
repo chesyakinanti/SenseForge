@@ -1,0 +1,69 @@
+{
+  "benchmark": "MongoDB equipment and operating-mode aggregation",
+  "generated_at_utc": "2026-10-26T06:51:32.842371+00:00",
+  "database": "senseforge",
+  "collection": "sensor_data",
+  "total_documents_available": 50000,
+  "repeats_per_size": 5,
+  "warmup_runs_per_size": 1,
+  "measurement": "Client-observed wall time from aggregate request through full cursor consumption",
+  "pipeline_stages": [
+    "$sort reading_id",
+    "$limit",
+    "$group",
+    "$set anomaly_rate",
+    "$sort groups"
+  ],
+  "results": [
+    {
+      "requested_documents": 100,
+      "processed_documents": 100,
+      "groups_returned": 5,
+      "repeats": 5,
+      "processing_time_avg_ms": 32.6945599867031,
+      "query_latency_p50_ms": 33.46889989916235,
+      "query_latency_p95_ms": 36.18040005676448,
+      "throughput_documents_per_second": 3058.612810225006
+    },
+    {
+      "requested_documents": 1000,
+      "processed_documents": 1000,
+      "groups_returned": 10,
+      "repeats": 5,
+      "processing_time_avg_ms": 40.63555998727679,
+      "query_latency_p50_ms": 32.86319994367659,
+      "query_latency_p95_ms": 68.76169994939119,
+      "throughput_documents_per_second": 24608.9878006629
+    },
+    {
+      "requested_documents": 5000,
+      "processed_documents": 5000,
+      "groups_returned": 19,
+      "repeats": 5,
+      "processing_time_avg_ms": 98.54806002695113,
+      "query_latency_p50_ms": 86.36119996663183,
+      "query_latency_p95_ms": 139.39480006229132,
+      "throughput_documents_per_second": 50736.66593368342
+    },
+    {
+      "requested_documents": 10000,
+      "processed_documents": 10000,
+      "groups_returned": 24,
+      "repeats": 5,
+      "processing_time_avg_ms": 94.36429997440428,
+      "query_latency_p50_ms": 75.10010001715273,
+      "query_latency_p95_ms": 144.45279992651194,
+      "throughput_documents_per_second": 105972.2797998018
+    },
+    {
+      "requested_documents": 50000,
+      "processed_documents": 50000,
+      "groups_returned": 25,
+      "repeats": 5,
+      "processing_time_avg_ms": 204.70422003418207,
+      "query_latency_p50_ms": 204.78080003522336,
+      "query_latency_p95_ms": 211.14000002853572,
+      "throughput_documents_per_second": 244254.85704032317
+    }
+  ]
+}

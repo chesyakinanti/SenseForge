@@ -1,0 +1,134 @@
+# ==============================================================================
+# SenseForge - .gitignore
+# Full-Stack Application: Next.js 16 (Frontend) + FastAPI (Python Backend)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment & Secret Variables
+# (PENTING: Jangan commit credentials, database password, API key)
+# ------------------------------------------------------------------------------
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+backend/.env*.local
+*.env
+*.pem
+*.key
+*.cert
+
+# Kecualikan file contoh agar rekan tim/cloner tahu variabel yang harus dibuat
+!.env.example
+!backend/.env.example
+
+# ------------------------------------------------------------------------------
+# 2. Frontend (Node.js & Next.js)
+# ------------------------------------------------------------------------------
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnp
+.pnp.js
+
+# Next.js Build Outputs & Caches
+.next/
+out/
+build/
+dist/
+.vercel/
+.turbo/
+
+# TypeScript Build Info
+*.tsbuildinfo
+next-env.d.ts
+
+# ------------------------------------------------------------------------------
+# 3. Backend (Python & FastAPI)
+# ------------------------------------------------------------------------------
+# Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Packaging & Distribution
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing, Linting & Coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# ------------------------------------------------------------------------------
+# 4. Operating System & Editor Files
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# IDEs & Code Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------------------------
+# 5. Nested / Accidental Cloned Repositories
+# ------------------------------------------------------------------------------
+# Menghindari git submodule error jika folder clone tidak sengaja bersarang
+/SenseForge/
+
+# ------------------------------------------------------------------------------
+# 6. Machine Learning Models & Datasets (Opsional)
+# File model .joblib (~26MB - ~60MB) dan dataset .csv (~15MB) di backend
+# GitHub memiliki batas ukuran file max 100MB (warning jika > 50MB).
+# Default: Biarkan di-track jika Anda ingin rekan tim langsung bisa menjalankan API.
+# Uncomment (hapus tanda '#') baris di bawah jika ingin mengabaikan file besar:
+# ------------------------------------------------------------------------------
+# backend/*.joblib
+# backend/data.csv
+# backend/data_cleaned.csv
